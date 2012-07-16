@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import android.util.Log;
 import android.widget.Toast;
 
 public class SMSReceiver extends BroadcastReceiver {
 
 	@Override
 	public void onReceive(Context context, Intent intent) {
+		Log.d("SMStutorial","SMSReceiver.onReceive");
 		Bundle bundle = intent.getExtras();
 		// obtenemos el array de estructuras pdus
 		Object messages[] = (Object[]) bundle.get("pdus");
